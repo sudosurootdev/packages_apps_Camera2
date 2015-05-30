@@ -437,19 +437,15 @@ public class CameraUtil {
     public static int getDisplayRotation(Context context) {
         WindowManager windowManager = (WindowManager) context
                 .getSystemService(Context.WINDOW_SERVICE);
-        int rotation = windowManager.getDefaultDisplay()
-                .getRotation();
+        int rotation = windowManager.getDefaultDisplay().getRotation();
+        int degrees = 0;
         switch (rotation) {
-            case Surface.ROTATION_0:
-                return 0;
-            case Surface.ROTATION_90:
-                return 90;
-            case Surface.ROTATION_180:
-                return 180;
-            case Surface.ROTATION_270:
-                return 270;
+            case Surface.ROTATION_0: degrees = 0; break;
+            case Surface.ROTATION_90: degrees = 90; break;
+            case Surface.ROTATION_180: degrees = 180; break;
+            case Surface.ROTATION_270: degrees = 270; break;
         }
-        return 0;
+        return degrees;
     }
 
     /**
