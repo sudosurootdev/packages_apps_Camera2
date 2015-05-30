@@ -449,7 +449,7 @@ public class CameraUtil {
             case Surface.ROTATION_270:
                 return 270;
         }
-        return 0;
+        return 180;
     }
 
     /**
